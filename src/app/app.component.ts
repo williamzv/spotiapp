@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { SpotifyService } from './services/spotify.service';
 import { TokenService } from './services/token.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -8,5 +8,7 @@ import { TokenService } from './services/token.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  constructor( private token: TokenService ) { }
+  constructor( private token: TokenService, private router: Router ) {
+    this.router.navigate(['/search']);
+  }
 }
